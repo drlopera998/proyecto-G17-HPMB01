@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical" android:padding="16dp">
+    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:text="Guía de Uso de Botones" android:textSize="20sp" android:textStyle="bold"
+        android:textColor="@color/green_dark"/>
+    <ScrollView android:layout_width="match_parent" android:layout_height="0dp"
+        android:layout_weight="1">
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="• Perfil: consulta la información y ajusta el tamaño del texto.
+
+• Fotos: explora la galería y amplía las imágenes.
+
+• Videos: selecciona un tutorial para reproducirlo.
+
+• Web: ingresa una URL y cárgala en el navegador integrado.
+
+• Botones: consulta esta guía."
+            android:textSize="16sp" android:lineSpacingExtra="5dp"/>
+    </ScrollView>
+    <Button android:id="@+id/btn_devolver_botones" android:layout_width="match_parent"
+        android:layout_height="52dp" android:text="Devolver al menú principal"/>
+</LinearLayout>

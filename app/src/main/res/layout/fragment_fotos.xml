@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical" android:padding="16dp">
+    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:text="Galería de Productos" android:textSize="20sp" android:textStyle="bold"
+        android:textColor="@color/green_dark"/>
+    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:text="Selecciona una imagen para ampliarla" android:textSize="14sp"
+        android:textColor="#666666" android:paddingBottom="8dp"/>
+    <GridView android:id="@+id/grid_galeria" android:layout_width="match_parent"
+        android:layout_height="0dp" android:layout_weight="1" android:numColumns="2"
+        android:horizontalSpacing="12dp" android:verticalSpacing="12dp"/>
+    <Button android:id="@+id/btn_devolver_fotos" android:layout_width="match_parent"
+        android:layout_height="52dp" android:text="Devolver al menú principal"/>
+</LinearLayout>

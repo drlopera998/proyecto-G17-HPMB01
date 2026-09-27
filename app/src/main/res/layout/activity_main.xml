@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:background="@color/background_light">
+
+    <LinearLayout
+        android:id="@+id/layout_menu_lateral"
+        android:layout_width="220dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:background="@color/green_light">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Creación de Muebles"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="@color/green_dark"
+            android:paddingBottom="20dp"/>
+
+        <Button android:id="@+id/btn_menu_perfil" android:layout_width="match_parent" android:layout_height="55dp" android:text="Perfil"/>
+        <Button android:id="@+id/btn_menu_fotos" android:layout_width="match_parent" android:layout_height="55dp" android:text="Fotos"/>
+        <Button android:id="@+id/btn_menu_videos" android:layout_width="match_parent" android:layout_height="55dp" android:text="Videos"/>
+        <Button android:id="@+id/btn_menu_web" android:layout_width="match_parent" android:layout_height="55dp" android:text="Web"/>
+        <Button android:id="@+id/btn_menu_botones" android:layout_width="match_parent" android:layout_height="55dp" android:text="Botones"/>
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/contenedor_fragmentos"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="#FFFFFF"/>
+</LinearLayout>
