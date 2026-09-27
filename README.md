@@ -31,5 +31,3 @@ La Entrega 2 define una actividad principal y cinco fragmentos:
 ## Pendientes
 
 Las imágenes reales de muebles y los videos/tutoriales deben ser incorporados por el equipo. La estructura queda preparada para agregarlos.
-
-> Nota: el paquete actual es `com.tunombre.creaciondemuebles`, siguiendo la estructura indicada en la entrega. Antes de una entrega final puede reemplazarse por el paquete definitivo.
