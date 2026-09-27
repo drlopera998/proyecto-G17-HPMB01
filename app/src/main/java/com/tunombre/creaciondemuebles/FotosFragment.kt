@@ -10,7 +10,6 @@ import android.widget.Button
 import android.widget.GridView
 import android.widget.ImageView
 import androidx.fragment.app.Fragment
-import com.github.chrisbanes.photoview.PhotoView
 
 class FotosFragment : Fragment() {
     private val images = listOf(
@@ -27,6 +26,7 @@ class FotosFragment : Fragment() {
         val grid = view.findViewById<GridView>(R.id.grid_galeria)
         grid.adapter = GalleryAdapter()
         grid.setOnItemClickListener { _, _, position, _ -> showImageDialog(images[position]) }
+
         view.findViewById<Button>(R.id.btn_devolver_fotos).setOnClickListener {
             (activity as? MainActivity)?.showMainMenu()
         }
@@ -35,17 +35,33 @@ class FotosFragment : Fragment() {
     private fun showImageDialog(resourceId: Int) {
         val dialog = Dialog(requireContext())
         dialog.setContentView(R.layout.dialogo_imagen)
-        val image = dialog.findViewById<PhotoView>(R.id.imagen_zoom)
-        val plus = dialog.findViewById<Button>(R.id.btn_imagen_mas)
-        val minus = dialog.findViewById<Button>(R.id.btn_imagen_menos)
-        val close = dialog.findViewById<Button>(R.id.btn_cerrar_imagen)
+
+        val image = dialog.findViewById<ImageView>(R.id.imagen_zoom)
+        var scale = 1f
 
         image.setImageResource(resourceId)
-        plus.setOnClickListener { image.scale = (image.scale * 1.25f).coerceAtMost(image.maximumScale) }
-        minus.setOnClickListener { image.scale = (image.scale * 0.75f).coerceAtLeast(image.minimumScale) }
-        close.setOnClickListener { dialog.dismiss() }
-        dialog.window?.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT)
+
+        dialog.findViewById<Button>(R.id.btn_imagen_mas).setOnClickListener {
+            scale = (scale * 1.25f).coerceAtMost(4f)
+            image.scaleX = scale
+            image.scaleY = scale
+        }
+
+        dialog.findViewById<Button>(R.id.btn_imagen_menos).setOnClickListener {
+            scale = (scale * 0.8f).coerceAtLeast(1f)
+            image.scaleX = scale
+            image.scaleY = scale
+        }
+
+        dialog.findViewById<Button>(R.id.btn_cerrar_imagen).setOnClickListener {
+            dialog.dismiss()
+        }
+
         dialog.show()
+        dialog.window?.setLayout(
+            ViewGroup.LayoutParams.MATCH_PARENT,
+            ViewGroup.LayoutParams.MATCH_PARENT
+        )
     }
 
     private inner class GalleryAdapter : BaseAdapter() {
@@ -55,7 +71,10 @@ class FotosFragment : Fragment() {
 
         override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
             val imageView = (convertView as? ImageView) ?: ImageView(requireContext()).apply {
-                layoutParams = GridView.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 260)
+                layoutParams = GridView.LayoutParams(
+                    ViewGroup.LayoutParams.MATCH_PARENT,
+                    260
+                )
                 scaleType = ImageView.ScaleType.CENTER_INSIDE
                 setPadding(8, 8, 8, 8)
             }
