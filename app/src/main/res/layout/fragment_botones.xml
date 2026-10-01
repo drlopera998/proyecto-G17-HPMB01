@@ -1,24 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent"
-    android:orientation="vertical" android:padding="16dp">
-    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
-        android:text="Guía de Uso de Botones" android:textSize="20sp" android:textStyle="bold"
-        android:textColor="@color/green_dark"/>
-    <ScrollView android:layout_width="match_parent" android:layout_height="0dp"
-        android:layout_weight="1">
-        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
-            android:text="• Perfil: consulta la información y ajusta el tamaño del texto.
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/content_background">
 
-• Fotos: explora la galería y amplía las imágenes.
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="62dp"
+        android:orientation="vertical"
+        android:paddingStart="14dp"
+        android:paddingTop="10dp">
 
-• Videos: selecciona un tutorial para reproducirlo.
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="USO DE BOTONES"
+            android:textColor="@color/green_header"
+            android:textSize="14sp"
+            android:textStyle="bold" />
 
-• Web: ingresa una URL y cárgala en el navegador integrado.
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Guía de navegación Android"
+            android:textColor="@color/text_muted"
+            android:textSize="10sp" />
+    </LinearLayout>
 
-• Botones: consulta esta guía."
-            android:textSize="16sp" android:lineSpacingExtra="5dp"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_card"
+                android:padding="12dp"
+                android:text="Mapa de la aplicación\n\nMENÚ → Perfil • Fotos • Videos • Web • Botones\n\nPerfil: información teórica y cambio de tamaño de texto.\n\nFotos: catálogo en cuadrícula y ampliación de imágenes.\n\nVideos: tutoriales seleccionables.\n\nWeb: navegación mediante URL.\n\nBotones: esta guía."
+                android:textColor="@color/text_dark"
+                android:textSize="12sp"
+                android:lineSpacingExtra="3dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/bg_card"
+                android:padding="12dp"
+                android:text="La interfaz mantiene un menú lateral para que el usuario pueda cambiar de sección sin perder la estructura principal."
+                android:textColor="@color/text_dark"
+                android:textSize="12sp" />
+        </LinearLayout>
     </ScrollView>
-    <Button android:id="@+id/btn_devolver_botones" android:layout_width="match_parent"
-        android:layout_height="52dp" android:text="Devolver al menú principal"/>
+
+    <Button
+        android:id="@+id/btn_devolver_botones"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/bg_menu_header"
+        android:text="Devolver al menú principal"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textSize="12sp"
+        android:textStyle="bold" />
 </LinearLayout>
