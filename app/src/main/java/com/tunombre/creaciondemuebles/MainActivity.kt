@@ -52,9 +52,14 @@ class MainActivity : AppCompatActivity() {
         }
 
         menuButtons.forEach { button ->
+            val selected = button == selectedButton
             button.setBackgroundResource(
-                if (button == selectedButton) R.drawable.bg_menu_button_active
+                if (selected) R.drawable.bg_menu_button_active
                 else R.drawable.bg_menu_button
+            )
+            button.setTextColor(
+                if (selected) android.graphics.Color.WHITE
+                else getColor(R.color.text_dark)
             )
         }
 
