@@ -3,6 +3,8 @@
 /local.properties
 /.idea/
 /build
+**/build/
+.kotlin/
 /captures
 .externalNativeBuild
 .cxx

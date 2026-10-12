@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AbsListView
 import android.widget.BaseAdapter
 import android.widget.Button
 import android.widget.GridView
@@ -14,9 +15,11 @@ import androidx.fragment.app.Fragment
 class FotosFragment : Fragment() {
     private val images = listOf(
         android.R.drawable.ic_menu_gallery,
-        android.R.drawable.ic_menu_gallery,
-        android.R.drawable.ic_menu_gallery,
-        android.R.drawable.ic_menu_gallery
+        android.R.drawable.ic_menu_slideshow,
+        android.R.drawable.ic_menu_camera,
+        android.R.drawable.ic_menu_manage,
+        android.R.drawable.ic_menu_report_image,
+        android.R.drawable.ic_menu_compass
     )
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View =
@@ -71,12 +74,13 @@ class FotosFragment : Fragment() {
 
         override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
             val imageView = (convertView as? ImageView) ?: ImageView(requireContext()).apply {
-                layoutParams = GridView.LayoutParams(
+                layoutParams = AbsListView.LayoutParams(
                     ViewGroup.LayoutParams.MATCH_PARENT,
-                    260
+                    280
                 )
                 scaleType = ImageView.ScaleType.CENTER_INSIDE
-                setPadding(8, 8, 8, 8)
+                setPadding(24, 24, 24, 24)
+                setBackgroundResource(R.drawable.bg_card)
             }
             imageView.setImageResource(images[position])
             return imageView

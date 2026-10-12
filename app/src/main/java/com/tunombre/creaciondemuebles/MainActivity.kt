@@ -30,6 +30,18 @@ class MainActivity : AppCompatActivity() {
         binding.btnMenuWeb.setOnClickListener { showFragment(WebFragment()) }
         binding.btnMenuBotones.setOnClickListener { showFragment(BotonesFragment()) }
 
+        binding.btnToggleMenu.setOnClickListener {
+            if (binding.layoutMenuLateral.visibility == View.VISIBLE) {
+                binding.layoutMenuLateral.visibility = View.GONE
+            } else {
+                binding.layoutMenuLateral.visibility = View.VISIBLE
+            }
+        }
+
+        binding.btnMenu.setOnClickListener {
+            binding.layoutMenuLateral.visibility = View.GONE
+        }
+
         if (savedInstanceState == null) {
             showFragment(PerfilFragment())
         }
@@ -40,8 +52,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun showFragment(fragment: Fragment) {
-        binding.layoutMenuLateral.visibility = View.VISIBLE
-
         val selectedButton = when (fragment) {
             is PerfilFragment -> binding.btnMenuPerfil
             is FotosFragment -> binding.btnMenuFotos
